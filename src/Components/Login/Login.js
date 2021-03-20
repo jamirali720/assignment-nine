@@ -15,21 +15,22 @@ if (firebase.apps.length === 0) {
         let history = useHistory();
         let location = useLocation();
         let { from } = location.state || { from: { pathname: "/" } };
+        
+        const [newUser, setNewUser] = useState({name:'', email: '', password: ''}); 
+        const [loggedInUser, setLoggedInUser] = useContext(userContext)
+         
 
-        const [newUser, setNewUser] = useState({name:'', email: '', password: ''});
-        const { name, email, password} = newUser;
-    const [loggedInUser, setLoggedInUser] = useContext(userContext)
-    const {displayName} = loggedInUser;  
+        const handleGoogleSignIn = () => {
 
-     const handleGoogleSignIn = () => {
-     const provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth()
+        const provider = new firebase.auth.GoogleAuthProvider();
+            firebase.auth()
         .signInWithPopup(provider)
         .then((res) => {   
             const { displayName, email} = res.user ; 
             const signedInUser = {name: displayName, email};       
             history.replace(from)
             setLoggedInUser(signedInUser)
+           
         
         
         }).catch((error) => {            
@@ -56,13 +57,12 @@ if (firebase.apps.length === 0) {
             const newUserInfo = {...newUser};
             newUserInfo[e.target.name] = e.target.value;
             setNewUser(newUserInfo)
+            setLoggedInUser(newUserInfo)
           
         }
     }
 
-    // const handleChange = (e) => {
-    //     setNewUser({...newUser, [e.target.name]:e.target.value})
-    // }
+   
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(newUser);
@@ -70,7 +70,8 @@ if (firebase.apps.length === 0) {
              firebase.auth().createUserWithEmailAndPassword(newUser.email, newUser.password)
              .then(res  => {
                 console.log(res); 
-                newUser(res)          
+                newUser(res) 
+                setLoggedInUser(res)         
              })
        }
     }
