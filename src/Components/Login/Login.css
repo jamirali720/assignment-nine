@@ -1,0 +1,39 @@
+.login-part 
+{
+    width : 450px;
+    margin:  20px  auto;
+    padding: 30px;
+    border-radius: 5px;  
+    box-shadow:  0 0 5px 0  gray;
+}
+.login-part h1 {
+    text-align: center;
+}
+.login-part input {
+    margin-top: 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.login-part .submit 
+{
+    width: 90%;
+    background-color: lime;
+    height: 45px;
+} 
+.login-part hr {
+    width : 90%;
+}
+.login-part p {
+    text-align:  center;
+    margin-top: 10px;
+}
+.login-part .or {
+   width : 30px;
+   margin:  -28px auto 10px;
+}
+.login-part .btn {
+    width: 90%;
+    height : 45px;
+    margin-left:  14px;
+    background-color: lime;
+}

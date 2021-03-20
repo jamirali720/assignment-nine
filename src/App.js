@@ -1,18 +1,20 @@
 import './App.css';
 import {
   BrowserRouter as Router,
-  Switch,
+  Switch,  
   Route  
 } from "react-router-dom";
 import { createContext, useState } from 'react';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Header from './Components/Header/Header';
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+
 
   export const userContext = createContext();
 
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({});
+  const [loggedInUser, setLoggedInUser] = useState({name:'', email:'', password: ''});
 
   return (
     <div className="App">
@@ -20,6 +22,7 @@ function App() {
       <Router>
       <Header></Header>
         <Switch>
+          
           <Route path="/home">
               <Home />
           </Route>
