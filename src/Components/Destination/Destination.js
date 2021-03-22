@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+
 
 
 
@@ -14,12 +14,8 @@ const Destination = () => {
        setDestination1(searchTo);
        
     }
-    console.log(destination, destination1);
-    // useEffect(() => {
-    //     fetch ('AIzaSyAm7UoORabDDCLGuElo7QXlO8mV7g0o0IM')
-    //     .then(res => res.json())
-    //     .then(data => console.log(data))
-    // },[])
+  
+    console.log(destination , destination1);
     return (
         <div >
          
