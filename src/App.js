@@ -8,7 +8,7 @@ import { createContext, useState } from 'react';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Header from './Components/Header/Header';
-import Destination from './Components/Destination/Destination';
+
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 
@@ -37,7 +37,7 @@ function App() {
                 <Home />
             </Route>
             <PrivateRoute path="/destination">
-                <Destination/>
+               
             </PrivateRoute>
             <Route path="/login">
                 <Login />
