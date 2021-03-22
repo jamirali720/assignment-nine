@@ -1,14 +1,13 @@
 import React, { useContext   } from 'react';
-
 import {
-    BrowserRouter as Router,    
+    BrowserRouter as  
     Route,  
     Redirect,   
-  } from "react-router-dom";
+} from "react-router-dom";
 import { userContext } from '../../App';
 
 const PrivateRoute = ({ children, ...rest }) => {
-    const [loggedInUser, setLoggedInUser] = useContext(userContext)
+    const [loggedInUser] = useContext(userContext)
     return (
         <Route
         {...rest}

@@ -1,7 +1,9 @@
-import React from 'react';
+import React  from 'react';
 import {Link} from 'react-router-dom'
 
-const Detail = (props) => {  
+
+const Detail = (props) => { 
+   
     const {name, image } = props.rider;
 
     return (
@@ -9,7 +11,8 @@ const Detail = (props) => {
                     <img style={{width: '12rem', margin: 'auto', padding: '10px'}} src={image} className="card-img-top" alt=""/>
                     <div className="card-body m-auto">
                         <p className="card-title text-primary"> {name}</p>
-                        <Link to="/login">BOOKING</Link>
+                     <Link to="/login">BOOKING</Link> 
+                  
                     </div>
                 </div>
         
